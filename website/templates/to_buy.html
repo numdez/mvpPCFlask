@@ -1,0 +1,44 @@
+{% extends "base.html" %}{% block title %}Home{% endblock %}
+{% block content %}
+<h1 align="center">To Buy</h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="nome">Nome do componente</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            id="nome" 
+            name="nome" 
+            placeholder="Enter nome do componente"
+        />
+    </div>
+    <div class="form-group">
+        <label for="precoCartao">Preço total no cartão</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            id="precoCartao" 
+            name="precoCartao" 
+            placeholder="Enter preço total no cartão"
+        />
+    </div>
+    <div class="form-group">
+        <label for="precoPix">Preço total no pix</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            id="precoPix" 
+            name="precoPix" 
+            placeholder="Enter preço total no pix"
+        />
+    </div>
+    <div class="form-group">
+        <select name='estado' id="estado" multiple class="form-control">
+            <option value=0> 0 </option>
+            <option value=1> 1 </option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
