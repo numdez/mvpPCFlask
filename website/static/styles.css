@@ -1,0 +1,19 @@
+button.btn.add::before {
+    font-family: fontAwesome;
+    content: "\f067\00a0";
+  }
+  
+  button.btn.edit::before {
+    font-family: fontAwesome;
+    content: "\f044\00a0";
+  }
+  
+  button.btn.save::before {
+    font-family: fontAwesome;
+    content: "\f00c\00a0";
+  }
+  
+  button.btn.cancel::before {
+    font-family: fontAwesome;
+    content: "\f00d\00a0";
+  }

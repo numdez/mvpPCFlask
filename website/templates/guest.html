@@ -1,10 +1,17 @@
 {% extends "base.html" %}{% block title %}Home{% endblock %}
 {% block content %}
-<h1 align="center">Notes</h1>
-<ul class="list-group list-group-flush" id="notes">
-    {% for note in user.notes %}
-    <li class="list-group-item">{{ note.data }}
+<h1 align="center">Componentes</h1>
+<ul class="list-group list-group-flush" id="componentes">
+    {% for note in user.componentes %}
+    {% if note.estado == 0 %}
+    <li class="list-group-item">{{ note.nome }}
+        <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <dt>No cartão: {{ note.precoCartao }}</dt>
+        <dt>No pix: {{ note.precoPix }}</dt>    
     </li>
+    {% endif %}
     {% endfor %}
 </ul>
 {% endblock %}
