@@ -58,15 +58,15 @@ motherboard = 338.24
 moboCartao = 338.24
 gabinete = 210
 cpu = 576
-fonte600w = 295
+fonte600w = 0
 '''fonte650w = 288 + 34
 f650wCartao = 339 + 34'''
 fonteAli = 237.92
 ram8 = 99.52
 impostoRam8 = 20.38
 totalRam8 = round_up(ram8 + impostoRam8)
-ram16 = 155.42
-impostoRam16 = 31.22
+ram16 = 0
+impostoRam16 = 0
 totalRam16 = round_up(ram16 + impostoRam16)
 ram32 = 249.60
 impostoRam32 = 51.14
@@ -74,35 +74,31 @@ totalRam32 = round_up(ram32 + impostoRam32)
 ram = round_up(ram8 + impostoRam8 + ram16 + impostoRam16)
 gpu = 952.45
 
-componentes = [motherboard, gabinete, cpu, fonte600w, gpu]
-comprados = [gpu, cpu, gabinete, motherboard]
+componentes = [motherboard, gabinete, cpu, fonte600w, totalRam16, gpu]
+comprados = [gpu, cpu, gabinete, motherboard, totalRam16, fonte600w]
 faltaComprar = [componente for componente in componentes if componente not in comprados]
 
 surplus = 0
 maxCartao = 1100
-livreCartao = 0
-faturaAtual = 536.54
-usoCheque = 63.61
-aParcela = 0
-aFaltam = 0
+livreCartao = 536
+faturaAtual = 118.84
+usoCheque = 167.95 + 47
+aParcela = 16.54
+aFaltam = 4
 bParcela = 191.90
 bFaltam = 2
 cParcela = 22.15
 cFaltam = 9
-dParcela = 16.54
-dFaltam = 4
-acadMes = 130
+acadMes = 0
 
 duasContas = contaCondo + contaSky
 duasContasEx = f"({contaCondo} + {contaSky})"
 
 pcDict = {
-    "2X 8GB de RAM": totalRam16,
-    "fonte 600W": fonte600w
+
 }
 pcCartao = {
-    "2X 8GB de RAM": totalRam16,
-    "fonte 600W": fonte600w
+
 }
 
 
@@ -110,7 +106,7 @@ avulso = 0
 entrada = 's'
 contLacos = 0
 mesAtual = True
-cont = 2
+cont = 3
 comprarParcela1 = []
 comprarParcela2 = []
 comprarParcela3 = []
@@ -137,10 +133,6 @@ while(entrada != 'n'):
     usoCheque = 0
     livreCheque = 0
     montante = salarioBruto + avulso
-    if mesAtual == True:
-        pagar = round_up(faturaAtual)
-        montante = 364.30 + avulso
-        mesAtual = False
     avulso = 0
     resto = round_up(montante - pagar)
     livreCartao += faturaAtual
